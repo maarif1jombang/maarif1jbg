@@ -134,7 +134,7 @@
                  <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-teal-600 shadow-sm bg-teal-50 flex items-center justify-center">
                      
                      <!-- Lapisan 1: Inisial (Tampil jika foto gagal) -->
-                     <span id="detail-initials" class="text-gray-900 text-xl sm:text-2xl font-bold uppercase select-none"></span>
+                     <span id="detail-initials" class="text-teal-600 text-xl sm:text-2xl font-bold uppercase select-none"></span>
                      
                      <!-- Lapisan 2: Foto (Menutupi inisial jika berhasil dimuat) -->
                      <img id="detail-student-photo" src="" alt="Foto Siswa" class="absolute inset-0 w-full h-full object-cover object-top bg-teal-50">
@@ -426,22 +426,20 @@
             const initials = getInitials(student.nama);
             
             tr.innerHTML = `
-                <td class="px-4 py-3 sm:px-6 text-center font-medium text-gray-900 whitespace-nowrap">${index + 1}</td>
-                <td class="px-4 py-3 sm:px-6 text-center">
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-900 text-center font-medium">${index + 1}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-center">
                     <div class="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden bg-teal-50 border border-teal-600 flex items-center justify-center">
-                        <span class="text-gray-900 text-xs font-bold select-none">${initials}</span>
+                        <span class="text-teal-600 text-xs font-bold select-none">${initials}</span>
                         <img src="${expectedPhotoUrl}" 
                              alt="${student.nama}" 
                              class="absolute inset-0 w-full h-full object-cover object-top bg-teal-50" 
                              onerror="this.style.display='none';">
                     </div>
                 </td>
-                <td class="px-4 py-3 sm:px-6 font-medium text-gray-900 whitespace-nowrap">${student.nama}</td>
-                <td class="px-4 py-3 sm:px-6">${student.nisn}</td>
-                <td class="px-4 py-3 sm:px-6 whitespace-nowrap">
-                   ${student.kelas}
-                </td>
-                <td class="px-4 py-3 sm:px-6 text-center">
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-900 text-left font-medium">${student.nama}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-left">${student.nisn}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-left">${student.kelas}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-center">
                     <button class="px-3 py-1.5 text-xs font-medium text-white bg-teal-600 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-300 btn-detail" data-nisn="${student.nisn}">Lihat</button>
                 </td>
             `;
