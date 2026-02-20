@@ -409,13 +409,14 @@
             const latestRecord = records.sort((a, b) => b.classLevel - a.classLevel)[0];
 
             const tr = document.createElement('tr');
+			tr.className = 'bg-white hover:bg-teal-50 transition duration-150 border-b';
             // MODIFIED: Added Number column (index + 1)
             tr.innerHTML = `
-                <td class="px-4 py-3 sm:px-6 text-center font-medium text-gray-900">${index + 1}</td>
-                <td class="px-4 py-3 sm:px-6 font-medium text-gray-900 text-left whitespace-nowrap">${latestRecord.nama}</td>
-				<td class="px-4 py-3 sm:px-6 text-gray-600 text-left whitespace-nowrap">${latestRecord.nisn}</td>
-                <td class="px-4 py-3 sm:px-6 text-gray-500 text-left whitespace-nowrap">${latestRecord.kelas}</td>
-                <td class="px-4 py-3 sm:px-6 text-center whitespace-nowrap">
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-900 text-center font-medium">${index + 1}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-900 text-left font-medium ">${latestRecord.nama}</td>
+				<td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-left">${latestRecord.nisn}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-left">${latestRecord.kelas}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-gray-500 text-center">
                     <button class="bg-teal-600 text-white px-3 py-1.5 rounded text-xs hover:bg-teal-700 transition select-student-btn">
                         Lihat
                     </button>
