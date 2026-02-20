@@ -131,13 +131,13 @@
             <div class="flex items-center gap-4">
                  
                  <!-- WRAPPER FOTO DENGAN FALLBACK STACKING -->
-                 <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border-2 border-teal-600 shadow-sm bg-teal-600 flex items-center justify-center">
+                 <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-full overflow-hidden border border-teal-600 shadow-sm bg-teal-50 flex items-center justify-center">
                      
                      <!-- Lapisan 1: Inisial (Tampil jika foto gagal) -->
-                     <span id="detail-initials" class="text-white text-xl sm:text-2xl font-bold uppercase select-none"></span>
+                     <span id="detail-initials" class="text-gray-900 text-xl sm:text-2xl font-bold uppercase select-none"></span>
                      
                      <!-- Lapisan 2: Foto (Menutupi inisial jika berhasil dimuat) -->
-                     <img id="detail-student-photo" src="" alt="Foto Siswa" class="absolute inset-0 w-full h-full object-cover object-top bg-gray-100">
+                     <img id="detail-student-photo" src="" alt="Foto Siswa" class="absolute inset-0 w-full h-full object-cover object-top bg-teal-50">
                      
                  </div>
                  
@@ -428,11 +428,11 @@
             tr.innerHTML = `
                 <td class="px-4 py-3 sm:px-6 text-center font-medium text-gray-900 whitespace-nowrap">${index + 1}</td>
                 <td class="px-4 py-3 sm:px-6 text-center">
-                    <div class="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden bg-teal-600 border border-gray-200 flex items-center justify-center">
-                        <span class="text-white text-xs font-bold select-none">${initials}</span>
+                    <div class="relative w-10 h-10 flex-shrink-0 rounded-full overflow-hidden bg-teal-50 border border-teal-600 flex items-center justify-center">
+                        <span class="text-gray-900 text-xs font-bold select-none">${initials}</span>
                         <img src="${expectedPhotoUrl}" 
                              alt="${student.nama}" 
-                             class="absolute inset-0 w-full h-full object-cover object-top bg-gray-100" 
+                             class="absolute inset-0 w-full h-full object-cover object-top bg-teal-50" 
                              onerror="this.style.display='none';">
                     </div>
                 </td>
