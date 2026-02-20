@@ -207,7 +207,7 @@
                     <!-- Bagian Nama Siswa (Dengan Foto) -->
                     <div class="flex items-center gap-3">
                         <!-- Container Foto/Icon -->
-                        <div id="photo-container" class="relative flex-shrink-0 w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center overflow-hidden border-2 border-teal-600 shadow-sm">
+                        <div id="photo-container" class="relative flex-shrink-0 w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center overflow-hidden border border-teal-600">
                             <!-- Icon Default (SVG) -->
                             <svg id="default-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -348,7 +348,7 @@
         students.forEach((student, index) => {
             const tr = document.createElement('tr');
             // Menghapus border-b dari baris terakhir untuk tampilan yang lebih bersih jika di dalam rounded container
-            tr.className = index === students.length - 1 ? "hover:bg-gray-50" : "border-b border-gray-200 hover:bg-gray-50";
+            tr.className = index === students.length - 1 ? "hover:bg-teal-50" : "border-b border-gray-200 hover:bg-teal-50";
 
             // URL Foto
             const photoUrl = student.nisn ? `${photoBaseUrl}/${student.nisn}.jpg` : '';
@@ -363,8 +363,8 @@
             `;
 
             tr.innerHTML = `
-                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm font-medium text-gray-900 sm:pl-6 text-center">${index + 1}</td>
-                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm font-medium text-gray-900 text-left">${student.nama}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm text-gray-900 text-center font-medium">${index + 1}</td>
+                <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm text-gray-900 text-left font-medium">${student.nama}</td>
                 <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm text-gray-500 text-left">${student.nisn}</td>
                 <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm text-gray-500 text-left">${student.noUjian}</td>
                 <td class="whitespace-nowrap px-4 py-3 sm:px-6 text-sm text-gray-500 text-center">
