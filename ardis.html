@@ -68,7 +68,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                     </svg>
                 </span>
-                <input type="text" id="searchInput" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Masukkan NISN, Nama, atau Kelas">
+                <input type="text" id="searchInput" class="w-full px-4 py-2 border border-teal-600 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Masukkan NISN atau Nama Siswa">
             </div>
         </div>
 
@@ -97,13 +97,8 @@
                  </div>
              </div>
 
-             <!-- Tombol Cari Ulang (Diperbarui) -->
-             <!-- Perubahan: 
-                  1. w-full sm:w-auto: Agar tombol penuh di HP
-                  2. text-red-700 bg-red-100: Warna merah agar sama dengan tombol Kembali
-                  3. Text "Cari Ulang" sekarang selalu muncul (menghapus class hidden)
-             -->
-             <button id="back-to-search-button" class="w-full sm:w-auto flex-shrink-0 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-red-700 bg-red-100 rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition">
+             <!-- Tombol Cari Ulang -->
+             <button id="back-to-search-button" class="w-full sm:w-auto flex-shrink-0 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-red-700 bg-red-100 border border-teal-600 rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>
@@ -111,7 +106,7 @@
             </button>
         </div>
 
-        <div class="overflow-x-auto rounded-lg border border-gray-200">
+        <div class="overflow-x-auto rounded-lg border border-teal-600">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
@@ -151,7 +146,7 @@
                      <p class="text-gray-500 text-sm sm:text-base">Identitas Siswa</p>
                  </div>
             </div>
-            <button id="back-button" class="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-red-700 bg-red-100 rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition">
+            <button id="back-button" class="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold text-red-700 bg-red-100 border border-teal-600 rounded-md hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
                 </svg>
@@ -159,7 +154,8 @@
             </button>
         </div>
         
-        <div class="bg-gray-50 p-6 sm:p-6 rounded-lg">
+        <!-- Identitas Pribadi Siswa -->
+        <div class="bg-gray-50 p-6 sm:p-6 rounded-lg border border-teal-600">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-gray-700">
                 <div class="flex items-center gap-4">
                     <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center">
@@ -217,6 +213,41 @@
                 </div>
             </div>
         </div>
+
+        <!-- Identitas Orangtua & Alamat -->
+        <h3 class="text-lg font-semibold text-gray-800 mt-6 mb-4">Identitas Orangtua & Alamat</h3>
+        <div class="bg-gray-50 p-6 sm:p-6 rounded-lg border border-teal-600">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-gray-700">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm text-gray-500">Nama Ayah</p>
+                        <p id="student-father" class="font-semibold text-sm sm:text-base"></p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm text-gray-500">Nama Ibu</p>
+                        <p id="student-mother" class="font-semibold text-sm sm:text-base"></p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4 md:col-span-2">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+                    </div>
+                    <div class="w-full">
+                        <p class="text-xs sm:text-sm text-gray-500">Alamat Lengkap</p>
+                        <p id="student-address" class="font-semibold text-sm sm:text-base break-words"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <script>
@@ -228,12 +259,7 @@
     // =========================================================================
     // 2. PENGATURAN LINK HOSTING FOTO (SANGAT PENTING!)
     // =========================================================================
-    // Ganti "https://domain-sekolah.com/foto-siswa/" dengan link folder hosting Anda.
-    // PASTIKAN ADA TANDA GARIS MIRING (/) DI PALING BELAKANG.
     const URL_FOLDER_FOTO = 'https://maarif1jombang.my.id/mts/foto/'; 
-    
-    // Ganti ekstensi ini sesuai format di hosting (.jpg, .png, atau .jpeg).
-    // PERHATIAN: Di server hosting .jpg dan .JPG itu dianggap BEDA.
     const FORMAT_FOTO = '.jpg'; 
 
     // Konfigurasi Kolom
@@ -247,6 +273,9 @@
         tahunMasuk: 'Tahun Masuk',
         status: 'Status',
         kelas: 'Kelas',
+        namaAyah: 'Nama Ayah',
+        namaIbu: 'Nama Ibu',
+        alamat: 'Alamat'
     };
     // =========================================================================
 
@@ -266,20 +295,46 @@
     let studentListCache = null;
     let currentSearchResults = [];
 
-    function parseCSV(csvText) {
-        const lines = csvText.split(/\r?\n/).filter(line => line);
-        if (lines.length < 2) return [];
-        const headers = lines[0].split(',').map(h => h.trim());
+    // FUNGSI PARSER CSV BARU: Menangani kutip dua dan koma di dalam kalimat
+    function parseCSV(str) {
+        const arr = [];
+        let quote = false;  // Penanda jika sedang berada di dalam teks yang diapit "..."
+        let row = 0, col = 0;
+
+        for (let c = 0; c < str.length; c++) {
+            let cc = str[c], nc = str[c+1];
+            arr[row] = arr[row] || [];
+            arr[row][col] = arr[row][col] || '';
+
+            // Jika ketemu dua buah kutip dua ("") di dalam kutip, anggap sebagai satu karakter kutip
+            if (cc == '"' && quote && nc == '"') { arr[row][col] += cc; ++c; continue; }
+            // Toggle mode kutip
+            if (cc == '"') { quote = !quote; continue; }
+            // Koma di luar mode kutip berarti pindah kolom
+            if (cc == ',' && !quote) { ++col; continue; }
+            // Enter (CRLF atau LF) di luar mode kutip berarti pindah baris
+            if (cc == '\r' && nc == '\n' && !quote) { ++row; col = 0; ++c; continue; }
+            if (cc == '\n' && !quote) { ++row; col = 0; continue; }
+            if (cc == '\r' && !quote) { ++row; col = 0; continue; }
+
+            // Selain kondisi di atas, tambahkan karakternya ke sel yang sedang aktif
+            arr[row][col] += cc;
+        }
+        
+        if (arr.length < 2) return [];
+        const headers = arr[0].map(h => h.trim());
         const data = [];
-        for (let i = 1; i < lines.length; i++) {
-            const values = lines[i].split(',');
-            if (values.length >= headers.length) {
-                const obj = {};
-                headers.forEach((header, index) => {
-                    obj[header] = values[index] ? values[index].trim() : '';
-                });
-                data.push(obj);
-            }
+        
+        for (let i = 1; i < arr.length; i++) {
+            const values = arr[i];
+            // Abaikan baris kosong
+            if (values.length === 1 && values[0].trim() === '') continue;
+            
+            const obj = {};
+            headers.forEach((header, index) => {
+                obj[header] = values[index] ? values[index].trim() : '';
+            });
+            data.push(obj);
         }
         return data;
     }
@@ -293,6 +348,7 @@
             if (!response.ok) { throw new Error(`Gagal menghubungi server.`); }
             
             const csvText = await response.text();
+            // Menggunakan parser CSV yang baru
             const rawData = parseCSV(csvText);
             
             studentListCache = rawData.map(row => ({
@@ -305,6 +361,9 @@
                 tahunMasuk: row[columns.tahunMasuk] || '-',
                 status: row[columns.status] || '-',
                 kelas: row[columns.kelas] || '-',
+                namaAyah: row[columns.namaAyah] || '-',
+                namaIbu: row[columns.namaIbu] || '-',
+                alamat: row[columns.alamat] || '-'
             }));
 
             return studentListCache;
@@ -315,7 +374,6 @@
         }
     }
     
-    // FUNGSI BARU: Mendapatkan inisial nama secara lokal (lebih cepat & anti error)
     function getInitials(name) {
         if (!name) return '??';
         const parts = name.trim().split(/\s+/);
@@ -334,24 +392,20 @@
         document.getElementById('student-nisn').textContent = student.nisn;
         document.getElementById('student-entry-year').textContent = student.tahunMasuk;
         document.getElementById('student-status').textContent = `${student.status} ${student.kelas}`;
+        
+        document.getElementById('student-father').textContent = student.namaAyah;
+        document.getElementById('student-mother').textContent = student.namaIbu;
+        document.getElementById('student-address').textContent = student.alamat;
 
-        // Konfigurasi Foto Detail dengan Fallback Lokal
         const photoEl = document.getElementById('detail-student-photo');
         const initialsEl = document.getElementById('detail-initials');
         const expectedPhotoUrl = `${URL_FOLDER_FOTO}${student.nisn}${FORMAT_FOTO}`;
         
-        // Set Inisial
         initialsEl.textContent = getInitials(student.nama);
-
-        // Reset display (agar foto dicoba dimuat dulu)
         photoEl.style.display = 'block';
-        
-        // Set Source Foto
         photoEl.src = expectedPhotoUrl;
         
-        // Handler Error: Jika foto gagal, sembunyikan foto (maka inisial di belakangnya akan terlihat)
         photoEl.onerror = function() {
-            console.warn(`Foto tidak ditemukan: ${expectedPhotoUrl}, menampilkan inisial.`);
             this.style.display = 'none';
         };
 
@@ -370,12 +424,6 @@
             
             const expectedPhotoUrl = `${URL_FOLDER_FOTO}${student.nisn}${FORMAT_FOTO}`;
             const initials = getInitials(student.nama);
-
-            // STRATEGI STACKING (Tumpukan):
-            // 1. Div pembungkus punya warna background teal & inisial teks.
-            // 2. Img ada di atasnya (absolute).
-            // 3. Jika Img error, kita set display='none', sehingga teks inisial di bawahnya terlihat.
-            // 4. class "object-top" memastikan foto di-crop dari atas.
             
             tr.innerHTML = `
                 <td class="px-4 py-3 sm:px-6 text-center font-medium text-gray-900 whitespace-nowrap">${index + 1}</td>
